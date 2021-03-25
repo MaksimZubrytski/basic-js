@@ -2,7 +2,7 @@ const CustomError = require("../extensions/custom-error");
 
 module.exports = function countCats(matrix) {
   let count = 0;
-  if(!matrix || matrix === []) {
+  if(!matrix.length) {
     return count;
   }
   for(let i = 0; i < matrix.length; i++) {
