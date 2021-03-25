@@ -4,8 +4,11 @@ const MODERN_ACTIVITY= 15;
 const HALF_LIFE_PERIOD= 5730;
 
 module.exports = function dateSample(sampleActivity) {
-  sampleActivity = Number(sampleActivity);
-  if(sampleActivity !== true) {
+  if(!sampleActivity || typeof sampleActivity !== 'string' || MODERN_ACTIVITY < sampleActivity || sampleActivity < 0) {
+    return false;
+  }
+  sampleActivity = parseFloat(sampleActivity);
+  if(!sampleActivity) {
     return false;
   }
   let k = 0.693 / HALF_LIFE_PERIOD;
