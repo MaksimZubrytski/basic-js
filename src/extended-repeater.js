@@ -9,7 +9,7 @@ module.exports = function repeater(str, options) {
   }
   
   let finishedValue = '';
-  let middleWareArray = ''
+  let middleWareString = ''
 
   if (options.hasOwnProperty("addition")) {
     if (typeof options.addition !== 'string') {
@@ -18,13 +18,13 @@ module.exports = function repeater(str, options) {
     if (!options.additionSeparator) {
       options.additionSeparator = "|"
     }
-    middleWareArray += str;
-    middleWareArray += options.addition;
+    middleWareString += str;
+    middleWareString += options.addition;
     for (let i = 0; i < options.additionRepeatTimes - 1; i ++) {
-      middleWareArray += options.additionSeparator;
-      middleWareArray += options.addition;
+      middleWareString += options.additionSeparator;
+      middleWareString += options.addition;
     }
-    str = middleWareArray;
+    str = middleWareString;
   }
 
   for (let i = 0; i < options.repeatTimes - 1; i++) {
